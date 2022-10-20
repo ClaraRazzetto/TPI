@@ -41,7 +41,7 @@ class ProgramaPrincipal:
                             print("Error! Debe ingresar un valor numerico")
                         finally:
                             validar = self.validarPrecio(precio)
-                            validar = True
+                
                     validar = False    
                     while(not validar):
                         try:
@@ -82,61 +82,36 @@ class ProgramaPrincipal:
                     nueva_motocicleta.cargar_motocicleta()
                     
             if nro ==2:
-                print("1- modificar automovil")
-                print("2- modificar motocicleta")
-                nr = int(input("Por favor ingrese una opcion"))
-                
-                if nr == 1:
-                    validar = False
-                    while(not validar):
-                        marca = input("Por favor ingrese la marca del automovil: ")
-                        validar = self.validarStr(marca)
-                    validar = False    
-                    while(not validar):
-                        modelo = input("Por favor ingrese el modelo del automovil: ")
-                        validar = self.validarStr(modelo)
-                    validar = False    
-                    while(not validar):
-                        try:
-                            precio = float(input("Por favor ingrese el precio del automovil: "))
-                        except TypeError:
-                            print("Error! Debe ingresar un valor numerico")
-                        finally:
-                            validar = self.validarPrecio(precio)
-                    automovil_a_modificar = Automovil(marca,modelo,precio)
-                    automovil_a_modificar.modificar_automoviles()
-                    
-                # if nr == 2:
-                #     marca = input("Por favor ingrese la marca: ")
-                #     modelo = input("Por favor ingrese el modelo: ")
-                #     cilindrada = input("Por favor ingresar la cilindrada: ")
-                #     precio = input("Por favor ingrese el nuevo precio: ")
-                #     color = input("Por favor ingrese el color: ")
-                #     motocicleta_a_modificar = Motocicleta(marca,modelo,cilindrada,precio,color)
-                #     motocicleta_a_modificar.modificar_motocicletas()
+                validar = False
+                while(not validar):
+                    marca = input("Por favor ingrese la marca del automovil: ")
+                    validar = self.validarStr(marca)
+                validar = False    
+                while(not validar):
+                    modelo = input("Por favor ingrese el modelo del automovil: ")
+                    validar = self.validarStr(modelo)
+                validar = False    
+                while(not validar):
+                    try:
+                        precio = float(input("Por favor ingrese el precio del automovil: "))
+                    except TypeError:
+                        print("Error! Debe ingresar un valor numerico")
+                    finally:
+                        validar = self.validarPrecio(precio)
+                automovil_a_modificar = Automovil(marca,modelo,precio)
+                automovil_a_modificar.modificar_automoviles()
             
             if nro==3:
-                print("1- borrar automovil")
-                print("2- Borrar motocicleta")
-                num = int(input("Por favor ingrese una opcion"))
-                
-                if num == 1:
-                    validar = False
-                    while(not validar):
-                        marca = input("Por favor ingrese la marca del automovil: ")
-                        validar = self.validarStr(marca)
-                    validar = False    
-                    while(not validar):
-                        modelo = input("Por favor ingrese el modelo del automovil: ")
-                        validar = self.validarStr(modelo)
-                    autoABorrar=Automovil(marca, modelo)
-                    autoABorrar.borrar_automovil()
-                # if num == 2:
-                #     marca = input("Por favor ingrese la marca: ")
-                #     modelo = input("Por favor ingrese el modelo: ")
-                #     cilindrada = input("Por favor ingrese la cilindrada: ")
-                #     motoABorrar=Motocicleta(marca, modelo)
-                #     motoABorrar.borrar_Motocicleta()
+                validar = False
+                while(not validar):
+                    marca = input("Por favor ingrese la marca del automovil: ")
+                    validar = self.validarStr(marca)
+                validar = False    
+                while(not validar):
+                    modelo = input("Por favor ingrese el modelo del automovil: ")
+                    validar = self.validarStr(modelo)
+                autoABorrar=Automovil(marca, modelo)
+                autoABorrar.borrar_automovil()
                 
             if nro==4:  #cargar marca y modelo e incremetnar su valor en la base de datos
                 validar = False
